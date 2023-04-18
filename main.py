@@ -143,7 +143,7 @@ def assign_scramblers_and_judges(
 def make_output_csv_files(csv_fieldnames = [], judging_assignments = None, scrambling_assignments = None, delegates = None):
     index_to_assignment_type = ['judge', 'scramble']
     for index, assignments in enumerate((judging_assignments, scrambling_assignments)):
-        with open(f'_{index_to_assignment_type[index]}_out_{args.input}', 'w') as f:
+        with open(f'_{index_to_assignment_type[index]}_{args.input}', 'w') as f:
             writer = csv.DictWriter(f, fieldnames=csv_fieldnames)
             writer.writeheader()
             for competitor, competitor_assignments in assignments.items():
